@@ -1,0 +1,110 @@
+# @see http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+
+# Spring Boot
+spring:
+  profiles:
+    active: ${GY_B2B_APP_PROFILE}
+    include: edp,eds,edi,b2b
+  # 关闭 JMX 接口
+  jmx.enabled: false
+  # JSON Serialization
+  jackson.serialization.write_dates_as_timestamps: false
+  # 文件上传配置
+  http:
+    multipart:
+      # 单个文件的上限
+      maxFileSize: 20Mb
+      # 单次上传的上限
+      maxRequestSize: 21Mb
+      # 上传持久化阀值
+      fileSizeThreshold: 1Mb
+      # 上传持久化路径
+      location: /tmp
+  # SMTP服务配置
+  mail:
+    # 生产／测试环境必须开启，以确保邮件服务可用
+    testConnection: true
+    #defaultEncoding: UTF-8
+    host: smtp.126.com
+    port: 465
+    username: elmailer@126.com
+    password: devops16
+    protocol: smtp
+    properties.mail.smtp:
+      auth: true
+      ssl.enable: true
+  redis:
+    # Redis 连接超时(毫秒)
+    url: redis://:GYB2B.1234@10.17.9.115:6379
+    timeout: 10000
+
+# Spring Actuator (health, auditing and metrics)
+management:
+  # HAM 相关 APIs 的前缀路径（默认: /）
+  contextPath: /ham
+  # 关闭默认的 HAM 安全开关，由 security.ini 代替管控
+  security.enabled: false
+
+# com.el.core.security.SecurityProperties
+security:
+  # 安全相关 APIs 的前缀路径（默认: /）
+  apis: /sec
+  # 防CSRF开关（默认关闭）
+  xsrf: true
+  # CORS支持（默认关闭）
+  cors: "*"
+  # 验证码开关（默认关闭）
+  captcha: true
+  # 响应混淆开关（默认关闭）
+  obscure: true
+
+# com.el.core.session.SessionProperties
+session:
+  # 会话超时（分）
+  timeout: 60
+  # 重复POST请求节流控制（秒）
+  throttle: 3
+
+# com.el.core.jdbc.JdbcProperties
+#jdbc:
+#  driverClassName: oracle.jdbc.OracleDriver
+#  url: jdbc:oracle:thin:@192.168.0.181:1521:orcl
+#  username: gyb2b
+#  password: gyb2b
+#  # 最大连接数
+#  maxCount: 20
+jdbc:
+  driverClassName: com.mysql.cj.jdbc.Driver
+#  url: jdbc:mysql://192.168.0.181:3306/gyb2bdb?useSSL=false&serverTimezone=UTC
+  url: jdbc:mysql://10.17.9.113:3306/gyb2bdb?useSSL=false&serverTimezone=Asia/Shanghai
+  username: gyb2b
+  password: Gyb2b#2018!
+
+# com.el.core.event.EventProperties
+event:
+  # Redis 发布订阅功能开关
+  redismq: true
+  # WebSocket 接口路径
+  wsEntry: /ws
+  # WebSocket 许可域名
+  wsAllow: "*"
+  # WebSocket 初始化会话容量
+  wsUsers: 50
+
+# com.el.core.storage.StorageProperties
+storage:
+  # 存储的根路经
+  location: /opt/storage/upload
+
+# com.el.core.AppProperties
+app:
+  # 服务程序 ID
+  progId: GY_B2B_SVR
+  # 服务节点 ID
+  nodeId: ${GY_B2B_SVR_ID}
+
+# com.el.demo.scheduling.DemoTaskProperties
+task:
+  autoStart: false
+  demoPlan1: "*/5 * * * * *"
+  demoPlan2: "*/10 * * * * *"

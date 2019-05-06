@@ -1,0 +1,6 @@
+jdbc:
+  driverClassName: oracle.jdbc.OracleDriver
+  url: jdbc:oracle:thin:@192.168.0.146:1521:orcl
+  username: JMJSRM
+  password: JMJSRM
+  maxActive: 2

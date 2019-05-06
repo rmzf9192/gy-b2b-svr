@@ -1,0 +1,192 @@
+{
+  "buttons": [
+    {
+      "id": "submit",
+      "text": "提交",
+      "type": "primary",
+      "hidden": 1
+    },
+    {
+      "id": "disable",
+      "text": "作废",
+      "type": "primary",
+      "hidden": 1
+    },
+    {
+      "id": "advice",
+      "placeholder": "审批意见",
+      "hidden": 1
+    },
+    {
+      "id": "approve",
+      "text": "同意",
+      "type": "primary",
+      "hidden": 0
+    },
+    {
+      "id": "reject",
+      "text": "拒绝",
+      "type": "primary",
+      "hidden": 0
+    }
+  ],
+  "panels": [
+    {
+      "panelId": "itemForm",
+      "hidden": 0,
+      "readOnly": 1,
+      "blocks": [
+        {
+          "blockId": "itemForm",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 1,
+          "fields": [
+            {
+              "fieldId": "useOrg",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "suppCenter",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "chooseSupp",
+      "hidden": 0,
+      "readOnly": 1,
+      "blocks": [
+        {
+          "blockId": "chooseSupp",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 1,
+          "fields": [
+            {
+              "fieldId": "suppName",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "tiralFeedback",
+      "hidden": 0,
+      "readOnly": 1,
+      "blocks": [
+        {
+          "blockId": "tiralFeedback",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+          ]
+        },
+        {
+          "blockId": "scene",
+          "type": "other",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "scene",
+      "hidden": 0,
+      "readOnly": 0,
+      "blocks": [
+        {
+          "blockId": "business",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 1,
+          "fields": [
+          ]
+        },
+        {
+          "blockId": "qualit",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "itemScore",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            }
+          ]
+        },
+        {
+          "blockId": "scene",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "cgOpinion",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "jstlOpinion",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            },
+            {
+              "fieldId": "zycfOpinion",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            }
+          ]
+        },
+        {
+          "blockId": "tiralFeedback",
+          "type": "other",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "batch",
+      "hidden": 0,
+      "readOnly": 1,
+      "blocks": [
+        {
+          "blockId": "batch",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+          ]
+        },
+        {
+          "blockId": "scene",
+          "type": "other",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+          ]
+        }
+      ]
+    }
+  ]
+}

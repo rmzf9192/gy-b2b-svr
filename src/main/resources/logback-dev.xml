@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<included>
+
+  <appender name="LOG_FILE"
+            class="ch.qos.logback.core.FileAppender">
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+    </encoder>
+    <file>${LOG_FILE}.log</file>
+    <append>false</append>
+  </appender>
+
+  <appender name="PLAN_LOG_FILE"
+            class="ch.qos.logback.core.FileAppender">
+    <encoder>
+      <pattern>${FILE_LOG_PATTERN}</pattern>
+    </encoder>
+    <file>${LOG_FILE}.plan.log</file>
+    <append>false</append>
+  </appender>
+
+  <logger name="com.el.core.scheduling" additivity="false" level="DEBUG">
+    <appender-ref ref="PLAN_LOG_FILE"/>
+  </logger>
+
+  <logger name="com.el.cfg" level="DEBUG"/>
+  <logger name="com.el.edp" level="DEBUG"/>
+  <logger name="com.el.b2b" level="DEBUG"/>
+
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+
+</included>

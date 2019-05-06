@@ -1,0 +1,277 @@
+{
+  "buttons": [
+    {
+      "id": "approve",
+      "text": "同意",
+      "type": "primary",
+      "hidden": 0
+    },
+    {
+      "id": "reject",
+      "text": "拒绝",
+      "type": "primary",
+      "hidden": 1
+    },
+    {
+      "id": "notice",
+      "text": "知会",
+      "type": "primary",
+      "hidden": 1
+    }
+  ],
+  "panels": [
+    {
+      "panelId": "basic",
+      "hidden": 0,
+      "readOnly": 1,
+      "blocks": [
+        {
+          "blockId": "basicInfo",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "suppName",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "suppId",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "yearMonth",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "statusName",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "lqsName",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "pre1Name",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "pre2Name",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "rectify",
+      "hidden": 0,
+      "readOnly": 0,
+      "blocks": [
+        {
+          "blockId": "rectifyInfo",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "rectificationMemo",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "ouAnswer",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "scoring",
+      "hidden": 0,
+      "readOnly": 0,
+      "blocks": [
+        {
+          "blockId": "adjust",
+          "type": "form",
+          "hidden": 1,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "finalScore",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "opinion1",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "blockId": "qualityInfo",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "scoreItem",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "score",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "memo",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "file",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "blockId": "deliveryInfo",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "scoreItem",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "score",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "memo",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "file",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "blockId": "serviceInfo",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "scoreItem",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "score",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "memo",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "file",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "blockId": "additionInfo",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "scoreItem",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "score",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "memo",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "file",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        },
+        {
+          "blockId": "attachment",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 1,
+          "fields": [
+            {
+              "fieldId": "attachment",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

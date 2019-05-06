@@ -1,0 +1,39 @@
+# Spring Boot Dev Server
+server:
+  port: 9001
+  context-path: /b2b
+
+spring:
+  # disable smtp server test
+  mail.testConnection: false
+  # upload work storage
+  http.multipart.location: build/tmp
+
+# upload storage
+storage.location: build/sfs
+
+# com.el.core.security.SecurityProperties
+security:
+  # 防CSRF开关（默认关闭）
+  xsrf: false
+  # CORS支持（默认关闭）
+  cors: "*"
+  # 验证码开关（默认关闭）
+  captcha: false
+
+# jdbc interceptors
+#jdbc:
+#  auditor: false
+#  tenancy: false
+
+# actuactor: off
+endpoints.enabled: false
+# swagger: on
+swagger: true
+
+# basicDataSync
+basicDataSync:
+  # 基础数据同步网关地址
+  api: http://127.0.0.1:9080/gy-sync
+  prefix: /api/b2b/sync/tbl/
+  suffix: ?batch=10000

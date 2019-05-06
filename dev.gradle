@@ -1,0 +1,107 @@
+/*------------+
+|   bootRun   |
++============*/
+
+dependencies {
+    // Runtime Hot-Swap for task:bootRun
+    runtime group: 'org.springframework.boot', name: 'spring-boot-devtools'
+}
+
+bootRun {
+    addResources = true
+
+    (appRunArgs as Map<String, String>).each {
+        k, v -> systemProperty(k, v)
+    }
+}
+
+/*--------+
+|   run   |
++========*/
+
+apply plugin: 'application'
+
+run {
+    mainClassName = 'com.el.App'
+
+    (appRunArgs as Map<String, String>).keySet().each {
+        systemProperty(it, System.properties.getProperty(it))
+    }
+
+    /* Another way by `applicationDefaultJvmArgs`
+    applicationDefaultJvmArgs = (appRunArgs as Map<String, String>).keySet().stream().map({
+        "-D${it}=${System.properties.getProperty(it)}"
+    }).collect(java.util.stream.Collectors.toList()) */
+}
+
+/*---------+
+|   test   |
++=========*/
+
+// for Spock Test Framework
+apply plugin: 'groovy'
+
+dependencies {
+
+    // swagger
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.8.0'
+    // swagger-ui: /swagger-ui.html
+    compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.8.0'
+
+    // test
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    testCompile group: 'org.spockframework', name: 'spock-core', version: '1.1-groovy-2.4'
+    testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.1-groovy-2.4'
+}
+
+test.doLast {
+    println("You can run task `${project.name}:jacocoTestReport` to create coverage report.")
+}
+
+/*-----------+
+|   jacoco   |
++===========*/
+
+apply plugin: 'jacoco'
+
+jacocoTestReport {
+    reports {
+        xml.enabled = false
+        csv.enabled = false
+        html.enabled = true
+    }
+}
+
+/*----------------+
+|   findBugMain   |
++================*/
+
+apply plugin: 'findbugs'
+
+findbugsMain {
+    reports {
+        xml.enabled = false
+        html.enabled = true
+    }
+}
+findbugs {
+    effort = 'max'
+    //reportLevel = 'high'
+    ignoreFailures = true
+}
+
+/*---------+
+|   idea   |
++=========*/
+
+apply plugin: 'idea'
+
+// == IDEA 2017.2+ ==
+// FOR feature `restart` of `spring-boot-devtools`
+// SHOULD set IDEA output directory SAME as GRADLE's.
+idea {
+    module {
+        outputDir file(sourceSets.main.java.outputDir)
+        testOutputDir file(sourceSets.test.java.outputDir)
+    }
+}

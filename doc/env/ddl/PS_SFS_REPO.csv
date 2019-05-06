@@ -1,0 +1,4 @@
+"CODE","NAME","TYPE","FILE_EXTS","EMBEDDED","WEB_PATH","MAX_SIZE","QUOTA_MB"
+"dev01","开发测试01(最大1M)","img","png,jpg,jpeg","N","",1000000,0
+"dev02","开发测试01(头像、存DB、最大250K)","img","png,jpg,jpeg","Y","",250000,0
+"dev03","开发测试01(最大10M、任意文件)","any","","N","/dev/sfs",10000000,0

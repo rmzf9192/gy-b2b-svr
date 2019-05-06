@@ -1,0 +1,5 @@
+1.增加查看计量单位转换的功能
+INSERT INTO PS_AUTH_PERM(CODE,PCODE,LVL,SEQ,LAYER,FIELD,NAME,TYPE,APIS,MENU_URL,MENU_ICO,MODIFY_TIME)
+VALUES('bd_pbitemUom','bd',2,7,'E','$','计量单位转化','M','/api/pbItemUom/**','/mdata/pbItemUom','database',now());
+给相关角色勾选菜单
+

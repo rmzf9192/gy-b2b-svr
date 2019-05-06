@@ -1,0 +1,109 @@
+/*-----------------+
+|   dependencies   |
++=================*/
+
+apply plugin: 'org.springframework.boot'
+
+repositories {
+    maven { url mavenUrl }
+}
+
+dependencies {
+	compile fileTree(dir: 'lib', include: '*.jar')
+
+    /*----------------+
+    |   JDBC DRIVER   |
+    +================*/
+
+//    runtime group: 'com.oracle', name: 'ojdbc7', version: '12.1.0.2.0'
+    // compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.11'
+
+    /*------------+
+    |   EL CORE   |
+    +============*/
+
+    // compile group: 'com.el', name: 'el-java-web', version: elJavaVersion
+
+    /*----------------+
+    |   FILE UPLOAD   |
+    +================*/
+
+    //compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3.3'
+
+    /*----------------+
+    |   HTTP CLIENT   |
+    +================*/
+
+    //compile group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.4.0'
+    //compile group: 'com.squareup.retrofit2', name: 'converter-jackson', version: '2.4.0'
+
+    // mock for exports service proxy
+    //compile group: 'com.squareup.retrofit2', name: 'retrofit-mock', version: '2.4.0'
+    //testCompile group: 'com.squareup.retrofit2', name: 'retrofit-mock', version: '2.4.0'
+
+    /*--------------+
+    |   OPS. TOOL   |
+    +==============*/
+
+    //runtime group: 'org.springframework.boot', name: 'spring-boot-starter-actuator'
+
+    /*-----------------------+
+    |   WORKFLOW (camunda)   |
+    +=======================*/
+
+    //compile group: 'org.codehaus.groovy', name: 'groovy-all', version: '2.4.15'
+    //compile group: 'org.camunda.bpm.extension.springboot', name: 'camunda-bpm-spring-boot-starter', version: '2.2.0'
+
+    // api for microsoft documents
+    //compile group: 'org.apache.poi', name: 'poi', version: '3.17'
+    //compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+
+
+}
+
+/*----------------+
+|   compileJava   |
++================*/
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+compileJava {
+    options.compilerArgs << '-Xlint:unchecked'
+    options.compilerArgs << '-Xlint:deprecation'
+}
+
+sourceSets {
+    ext {
+        def scanDirs = { rootDir ->
+            def mySrcDirs = []
+            def myResDirs = []
+            new File(rootDir).eachDir() { dir ->
+                dir.getName() == 'resources' ? myResDirs.add(dir) : mySrcDirs.add(dir)
+            }
+            println("[BUILD] src dirs: ${mySrcDirs}")
+            println("[BUILD] res dirs: ${myResDirs}")
+            return new Tuple(mySrcDirs, myResDirs)
+        }
+        (mainSrcDirs, mainResDirs) = scanDirs('src/main')
+        (testSrcDirs, testResDirs) = scanDirs('src/test')
+    }
+    main {
+        java {
+            srcDirs mainSrcDirs
+        }
+        resources {
+            srcDirs mainResDirs
+        }
+    }
+    test {
+        java {
+            srcDirs testSrcDirs
+        }
+        resources {
+            srcDirs mainResDirs
+        }
+    }
+}

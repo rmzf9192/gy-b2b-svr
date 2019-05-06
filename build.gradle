@@ -1,0 +1,13 @@
+buildscript {
+    apply from: 'build-conf.gradle'
+    repositories {
+        maven { url mavenUrl }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springVersion}"
+    }
+}
+
+apply from: 'build-deps.gradle'
+
+apply from: 'dev.gradle'

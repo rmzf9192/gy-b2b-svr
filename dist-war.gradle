@@ -1,0 +1,30 @@
+buildscript {
+    apply from: 'build-conf.gradle'
+    repositories {
+        maven { url mavenUrl }
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springVersion}"
+    }
+}
+
+apply from: 'build-deps.gradle'
+
+/*--------+
+|   war   |
++========*/
+
+apply plugin: 'war'
+
+version = appVersion
+
+war.doLast {
+    def warFile = file("build/libs/${project.name}-${appVersion}.war")
+    def warSize = warFile.exists() ? warFile.size() : 0
+    println warSize > 0 ? "WAR file was built: ${warFile} (${warSize} bytes)" : "WAR file was built failed."
+}
+
+dependencies {
+    // swagger
+    compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.8.0'
+}

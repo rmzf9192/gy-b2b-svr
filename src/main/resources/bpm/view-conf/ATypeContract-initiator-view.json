@@ -1,0 +1,212 @@
+{
+  "buttons": [
+    {
+      "id": "approve",
+      "text": "同意",
+      "type": "primary",
+      "hidden": 1
+    },
+    {
+      "id": "reject",
+      "text": "拒绝",
+      "type": "primary",
+      "hidden": 1
+    },
+    {
+      "id": "notice",
+      "text": "知会",
+      "type": "primary",
+      "hidden": 1
+    }
+  ],
+  "panels": [
+    {
+      "panelId": "contractBasic",
+      "hidden": 0,
+      "readOnly": 1,
+      "blocks": [
+        {
+          "blockId": "contractBasicForm",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "contractCode",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "contractName",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            },
+            {
+              "fieldId": "contractType",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            },
+
+            {
+              "fieldId": "checkStatus",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "amount",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "itemCount",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "suppName",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },
+            {
+              "fieldId": "suppCode",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "currency",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },{
+              "fieldId": "ouName",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },{
+              "fieldId": "ouCode",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },{
+              "fieldId": "itemClass",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },{
+              "fieldId": "signPlace",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+
+            {
+              "fieldId": "signDate",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            },
+            {
+              "fieldId": "timeInForceDate",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            },
+            {
+              "fieldId": "deadDate",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "contractTmpl",
+      "hidden": 0,
+      "readOnly": 1,
+      "blocks": [
+        {
+          "blockId": "contractTmplForm",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "contractModelId",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "contractVariate",
+      "hidden": 0,
+      "readOnly": 1,
+      "blocks": [
+        {
+          "blockId": "contractVariateList",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "contractVarName",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },{
+              "fieldId": "contractVarDesc",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "itemContent",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "contractAgreement",
+      "hidden": 0,
+      "readOnly": 1,
+      "blocks": [
+        {
+          "blockId": "contractAgreementList",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "lineNo",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            },{
+              "fieldId": "itemContent",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

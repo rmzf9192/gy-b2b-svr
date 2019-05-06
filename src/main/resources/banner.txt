@@ -1,0 +1,4 @@
+============================================================
+[APP] active logging profile     :: ${GY_B2B_LOG_PROFILE}
+[APP] active spring profiles     :: ${spring.profiles.include},${spring.profiles.active}
+============================================================

@@ -1,0 +1,3 @@
+"GEN_CODE","GEN_NAME","TENANT_ID","APP_CODE","SEQ_FMT","SEQ_KEY","CNT_KEY","CNT_LEN","CNT_PAD","CNT_MIN","CNT_MAX","MODIFY_TIME"
+"DEV_PO1","有业务上下文",1,"SRM_SVR","JMJ-PO-%s-%s-%s","lpad(4, '$', ctx.entCode)","t('yMMdd')",3,"0",1,999,13-4月 -18
+"DEV_PO2","无业务上下文",1,"SRM_SVR","SRM-PO-%s-%s-%s","-","t(ctx.buyTime, 'yMMdd.HH')",2,"*",21,79,13-4月 -18

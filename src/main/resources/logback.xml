@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- @see https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html -->
+<!-- @see http://logback.qos.ch/manual/appenders.html -->
+<!-- @see http://logback.qos.ch/manual/encoders.html -->
+<configuration>
+
+  <!-- @see org/springframework/boot/logging/logback/base.xml -->
+  <property name="LOG_FILE" value="${GY_B2B_LOG_DIR}/logs/b2b/b2b"/>
+
+  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+  <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+  <include resource="logback-${GY_B2B_LOG_PROFILE}.xml"/>
+
+</configuration>

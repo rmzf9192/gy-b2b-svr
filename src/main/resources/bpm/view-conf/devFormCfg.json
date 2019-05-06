@@ -1,0 +1,121 @@
+{
+  "buttons": [
+    {
+      "id": "approve",
+      "text": "同意",
+      "type": "primary",
+      "hidden": 0,
+      "readOnly": 1
+    },
+    {
+      "id": "reject",
+      "text": "拒绝",
+      "type": "primary",
+      "hidden": 1,
+      "readOnly": 0
+    },
+    {
+      "id": "notice",
+      "text": "知会",
+      "type": "primary",
+      "hidden": 1,
+      "readOnly": 0
+    }
+  ],
+  "panels": [
+    {
+      "panelId": "basicInfo",
+      "hidden": 0,
+      "readOnly": 0,
+      "blocks": [
+        {
+          "blockId": "basicForm",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "beginDate",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            },
+            {
+              "fieldId": "improveDate",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "newMachineCode",
+              "hidden": 1,
+              "readOnly": 0,
+              "required": 1
+            }
+          ]
+        },
+        {
+          "blockId": "bankList",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "warnLevelCode",
+              "hidden": 0,
+              "readOnly": 1,
+              "required": 0
+            },
+            {
+              "fieldId": "warnDays",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            },
+            {
+              "fieldId": "newMachineCode",
+              "hidden": 1,
+              "readOnly": 0,
+              "required": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "panelId": "bankInfo",
+      "hidden": 0,
+      "readOnly": 0,
+      "blocks": [
+        {
+          "blockId": "basicBank",
+          "type": "form",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "ouName",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            }
+          ]
+        },
+        {
+          "blockId": "bankList",
+          "type": "table",
+          "hidden": 0,
+          "readOnly": 0,
+          "fields": [
+            {
+              "fieldId": "ouName",
+              "hidden": 0,
+              "readOnly": 0,
+              "required": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

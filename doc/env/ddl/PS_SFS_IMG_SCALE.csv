@@ -1,0 +1,4 @@
+"TENANT_ID","REPO_CODE","SUFFIX","REMARK","RES_W","RES_H"
+1,"dev01","_s","小尺寸",32,32
+1,"dev01","_m","中尺寸",128,128
+1,"dev01","_l","大尺寸",512,512

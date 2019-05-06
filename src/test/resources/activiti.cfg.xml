@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <bean id="processEngineConfiguration"
+        class="org.camunda.bpm.engine.impl.cfg.StandaloneInMemProcessEngineConfiguration">
+
+    <property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.0.146:1521:orcl"/>
+    <property name="jdbcDriver" value="oracle.jdbc.OracleDriver"/>
+    <property name="jdbcUsername" value="JMJSRM"/>
+    <property name="jdbcPassword" value="JMJSRM"/>
+    <property name="databaseSchemaUpdate" value="false"/>
+
+    <!-- turn off metrics reporter -->
+    <property name="dbMetricsReporterActivate" value="false"/>
+
+  </bean>
+
+</beans>
